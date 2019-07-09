@@ -10,6 +10,12 @@
 
 要求Unity 2018.4或者更高版本
 
+## 要求 ##
+
+[Loxodon Framework](https://github.com/cocowolf/loxodon-framework)
+
+## 介绍 ##
+
 本插件扩展了Localization的功能，支持使用CSV格式的本地化配置文件，配置文件格式如下。
 
 - key：配置文件的key，不能为空，此列必须存在。
