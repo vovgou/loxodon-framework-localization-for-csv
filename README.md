@@ -14,6 +14,8 @@
 
 [Loxodon Framework](https://github.com/cocowolf/loxodon-framework)
 
+本项目作为Loxodon.Framework插件，必须在Loxodon.Framework环境下使用，请在安装使用前先安装Loxodon.Framework框架。
+
 ## 介绍 ##
 
 本插件扩展了Localization的功能，支持使用CSV格式的本地化配置文件，配置文件格式如下。
