@@ -269,12 +269,12 @@ namespace Loxodon.Framework.Editors
                             if (!string.IsNullOrEmpty(elementName) && elementName.EndsWith("-array"))
                             {
                                 //array
-                                bool hasSpecialChar = list.Exists(v => !string.IsNullOrEmpty(v) && !Regex.IsMatch(v.Trim(), @"^((\(\S*\))|(\[\S*\])|(\{\S*\})|(<\S*>))$") && v.IndexOfAny(CSV_SPECIAL_CHARS) != -1);
+                                bool hasSpecialChar = list.Exists(v => !string.IsNullOrEmpty(v) && ((!Regex.IsMatch(v.Trim(), @"^((\(\S*\))|(\[\S*\])|(\{\S*\})|(<\S*>))$") && v.IndexOfAny(CSV_SPECIAL_CHARS) != -1) || (v.IndexOf('"') != -1)));
                                 StringBuilder buf = new StringBuilder();
                                 for (int i = 0; i < list.Count; i++)
                                 {
                                     if (hasSpecialChar)
-                                        buf.AppendFormat("\"{0}\"", list[i]);
+                                        buf.AppendFormat("\"{0}\"", list[i].Replace("\"", "&quot;"));
                                     else
                                         buf.Append(list[i]);
 
