@@ -55,12 +55,12 @@ namespace Loxodon.Framework.Localizations
             this.executor = new CoroutineExecutor();
         }
 
-        public void Load(CultureInfo cultureInfo, Action<Dictionary<string, object>> onCompleted)
+        public void Load(CultureInfo cultureInfo, Action<Dictionary<string, object>> onLoadCompleted)
         {
-            executor.RunOnCoroutine(DoLoad(cultureInfo, onCompleted));
+            executor.RunOnCoroutine(DoLoad(cultureInfo, onLoadCompleted));
         }
 
-        protected virtual IEnumerator DoLoad(CultureInfo cultureInfo, Action<Dictionary<string, object>> onCompleted)
+        protected virtual IEnumerator DoLoad(CultureInfo cultureInfo, Action<Dictionary<string, object>> onLoadCompleted)
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
             using (UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(this.assetBundleUrl))
@@ -85,8 +85,8 @@ namespace Loxodon.Framework.Localizations
                     }
                     catch (Exception) { }
 
-                    if (onCompleted != null)
-                        onCompleted(dict);
+                    if (onLoadCompleted != null)
+                        onLoadCompleted(dict);
                 }
             }
         }

@@ -50,7 +50,7 @@ namespace Loxodon.Framework.Localizations
             this.parser = parser;
         }
 
-        public void Load(CultureInfo cultureInfo, Action<Dictionary<string, object>> onCompleted)
+        public void Load(CultureInfo cultureInfo, Action<Dictionary<string, object>> onLoadCompleted)
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
             try
@@ -60,8 +60,8 @@ namespace Loxodon.Framework.Localizations
             }
             finally
             {
-                if (onCompleted != null)
-                    onCompleted(dict);
+                if (onLoadCompleted != null)
+                    onLoadCompleted(dict);
             }
         }
         private void FillData(Dictionary<string, object> dict, TextAsset[] texts, CultureInfo cultureInfo)

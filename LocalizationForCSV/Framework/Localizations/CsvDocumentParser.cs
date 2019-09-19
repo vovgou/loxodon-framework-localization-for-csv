@@ -56,9 +56,9 @@ namespace Loxodon.Framework.Localizations
 
                 string[] headers = reader.Context.HeaderRecord;
 
-                string cultureISOName = cultureInfo.TwoLetterISOLanguageName;//eg:zh  en
-                string cultureName = cultureInfo.Name;//eg:zh-CN  en-US
                 string defaultName = "default";
+                string cultureISOName = cultureInfo.TwoLetterISOLanguageName;//eg:zh  en
+                string cultureName = cultureInfo.Name;//eg:zh-CN  en-US              
 
                 if (Array.IndexOf(headers, "default") < 0)
                 {
@@ -81,6 +81,9 @@ namespace Loxodon.Framework.Localizations
                 {
                     key = reader.GetField("key");
                     typeName = reader.GetField("type");
+
+                    if (string.IsNullOrEmpty(key))
+                        continue;
 
                     if (reader.TryGetField<string>(cultureName, out value) && !string.IsNullOrEmpty(value))
                     {
