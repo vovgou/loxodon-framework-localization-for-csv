@@ -23,22 +23,23 @@
  */
 
 using Loxodon.Framework.Localizations;
-using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-public class LocalizationForCsvExample : MonoBehaviour
+namespace Loxodon.Framework.Examples
 {
-    void Start()
+    public class LocalizationForCsvExample : MonoBehaviour
     {
-        CultureInfo cultureInfo = Locale.GetCultureInfoByLanguage(SystemLanguage.Chinese);
+        void Start()
+        {
+            CultureInfo cultureInfo = Locale.GetCultureInfoByLanguage(SystemLanguage.Chinese);
 
-        var localization = Localization.Current;
-        localization.CultureInfo = cultureInfo;
-        localization.AddDataProvider(new DefaultCsvDataProvider("LocalizationCsv", new CsvDocumentParser()));
+            var localization = Localization.Current;
+            localization.CultureInfo = cultureInfo;
+            localization.AddDataProvider(new DefaultCsvDataProvider("LocalizationCsv", new CsvDocumentParser()));
 
-        Debug.LogFormat("{0}", localization.GetText("app.name"));
-        Debug.LogFormat("{0}", localization.GetText("databinding.tutorials.title"));
+            Debug.LogFormat("{0}", localization.GetText("app.name"));
+            Debug.LogFormat("{0}", localization.GetText("databinding.tutorials.title"));
+        }
     }
 }

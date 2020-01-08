@@ -1,4 +1,4 @@
-![](docs/images/icon.png)
+![](LocalizationForCSV/Docs/icon.png)
 
 # Loxodon Framework Localization For CSV
 
