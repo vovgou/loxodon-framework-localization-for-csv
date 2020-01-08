@@ -38,9 +38,9 @@
 | byte | 0 | 无符号byte，0-255 |
 | short | 0 | short类型 |
 | ushort | 0 | 无符号short类型 |
-| int | 0 | 整形 |
-| uint | 0 | 无符号整形 |
-| long | 0 | 长整形 |
+| int | 0 | 整型 |
+| uint | 0 | 无符号整型 |
+| long | 0 | 长整型 |
 | ulong | 0 | 无符号长整型 |
 | char | ‘’ | 字符类型 |
 | float | 0 | 单精度浮点类型 |
