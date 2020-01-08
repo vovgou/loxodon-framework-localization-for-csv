@@ -38,9 +38,9 @@
 | byte | 0 | 无符号byte，0-255 |
 | short | 0 | short类型 |
 | ushort | 0 | 无符号short类型 |
-| int | 0 | 整形 |
-| uint | 0 | 无符号整形 |
-| long | 0 | 长整形 |
+| int | 0 | 整型 |
+| uint | 0 | 无符号整型 |
+| long | 0 | 长整型 |
 | ulong | 0 | 无符号长整型 |
 | char | ‘’ | 字符类型 |
 | float | 0 | 单精度浮点类型 |
@@ -50,7 +50,7 @@
 | vector2 | (0,0) | Vector2类型,示例：(0,0) |
 | vector3 | (0,0,0) | Vector3类型，示例：(0,0,0) |
 | vector4 | (0,0,0) | Vector4类型，示例：(0,0,0,0)|
-| color | #000000 | Vector2类型，示例：#FF0000 |
+| color | #000000 | Color类型，示例：#FF0000 |
 
 ### 数组的表示 ###
 
